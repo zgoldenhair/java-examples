@@ -1,0 +1,48 @@
+abstract class Figura {
+    public String name;
+    public String color;
+
+    public abstract double  kal();
+
+}
+
+ class Circle extends Figura{
+
+    private Double r;
+public Circle(String name,String colr,Double r){
+    this.name=name;
+    this.color=colr;
+    this.r=r;
+}
+
+    @Override
+    public double kal() {
+        double pi=3.14;
+        return pi*Math.pow(r,2);
+    }
+
+}
+
+    class Square extends Figura{
+    private Double c;
+    public Square(String name,String colr,Double c){
+        this.name=name;
+        this.color=colr;
+        this.c=c;
+    }
+    
+    @Override
+    public double kal() {
+        return Math.pow(c,2);
+    }
+}
+
+public class Main {
+    public static void main(String[] args)
+    {
+        Circle circle=new Circle("Krug","Red",4.1);
+        System.out.println("Krug"+circle.kal());
+        Square sq=new Square("Kvadrat","Blue",5.3);
+        System.out.println("Kvadrat"+sq.kal());
+    }
+}
